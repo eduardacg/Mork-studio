@@ -530,7 +530,7 @@ button {
   height: 100%;
 }
 /* Evita que setas e símbolos vire emoji no celular*/
-.link,
+.back-link,
 .footer a {
   font-faily: 'DM Mono', monospace;
   font-variant-emoji: text;
@@ -547,4 +547,15 @@ button {
   transform: rotate(45deg);
   margin-right: 7px;
   vertical-align: 2px;
+}
+.project .category-symbol::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  trasform: rotate(45deg);
+  margin: 18px auto 0:
+font-family: sans-serif;
 }
