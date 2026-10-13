@@ -112,7 +112,7 @@ button {
   font-size: clamp(65px, 13.5vw, 180px);
   line-height: .85;
   letter-spacing: -.095em;
-  font-weight: 200;
+  font-weight: 100;
   margin: 64px 0 55px;
   animation: appear 1s ease both;
 }
