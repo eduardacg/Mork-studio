@@ -509,7 +509,7 @@ button {
   font-family: 'DM Mono', monospace;
   font-size: clamp(24px, 4vw, 48px);
   letter-spacing: .12em;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .contact-art .category-symbol {
