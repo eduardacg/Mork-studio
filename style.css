@@ -291,7 +291,7 @@ button {
 
 .about h2 {
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 18px;
   letter-spacing: 2px;
   color: var(--muted);
   font-weight: 400;
