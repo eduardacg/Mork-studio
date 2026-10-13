@@ -15,21 +15,21 @@ const projects = [
   },
   {
     title: "Black Ritual",
-    category: "Audiovisual",
+    category: "Portfólio",
     year: "2026",
     cover: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85",
     description: "Pesquisa visual de atmosfera, luz, sombra e composição cinematográfica."
   },
   {
     title: "Ink Stories",
-    category: "Fotografia",
+    category: "Estúdio",
     year: "2026",
     cover: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=900&q=85",
     description: "Uma coleção visual dedicada a detalhes, texturas e expressão artística."
   },
   {
     title: "Dark Matter",
-    category: "Direção de arte",
+    category: "Contato",
     year: "2026",
     cover: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85",
     description: "Exploração visual de formas orgânicas, contrastes e atmosferas obscuras."
