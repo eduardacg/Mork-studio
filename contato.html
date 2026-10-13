@@ -310,6 +310,23 @@
         transition: none !important;
       }
     }
+    /* CORREÇÃO DAS SETAS AUTOMÁTICAS */
+
+.contact-page a::before,
+.contact-page a::after,
+.contact-page .contact-channel::before,
+.contact-page .contact-channel::after {
+  content: none;
+}
+
+/* Mantém somente as setas escritas no HTML */
+.contact-page .contact-arrow {
+  display: inline-block;
+}
+
+.contact-page .contact-submit span {
+  display: inline-block;
+}
   </style>
 </head>
 
