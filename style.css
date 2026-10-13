@@ -529,3 +529,11 @@ button {
 .project-image img {
   height: 100%;
 }
+/* Evita que setas e símbolos vire emoji no celular*/
+
+.back-link,
+.footer a {
+  font-faily: 'DM Mono', monospace;
+  font-variant-emoji: text;
+  text-decoration: none;
+}
