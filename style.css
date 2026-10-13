@@ -475,3 +475,57 @@ button {
     scroll-behavior: auto !important;
   }
 }
+/* CATEGORIAS DA PÁGINA INICIAL */
+
+.project {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.category-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at center, #222 0%, #101010 48%, #080808 100%);
+}
+
+.category-symbol {
+  font-size: clamp(28px, 5vw, 65px);
+  font-weight: 800;
+  letter-spacing: -.08em;
+  text-align: center;
+  line-height: .95;
+  transition: transform .6s ease;
+}
+
+.identity-art .category-symbol {
+  font-size: clamp(36px, 6vw, 80px);
+  letter-spacing: -.1em;
+}
+
+.studio-art .category-symbol {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(24px, 4vw, 48px);
+  letter-spacing: .12em;
+  font-weight: 400;
+}
+
+.contact-art .category-symbol {
+  font-size: clamp(25px, 4vw, 48px);
+  letter-spacing: -.06em;
+}
+
+.project:hover .category-symbol {
+  transform: scale(1.06);
+}
+
+.project:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 5px;
+}
+
+.project-image img {
+  height: 100%;
+}
