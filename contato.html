@@ -1,1 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Contato — MØRK Studio</title>
+
+  <meta
+    name="description"
+    content="Entre em contato com o MØRK Studio para projetos, orçamentos e colaborações."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =================================
+       MØRK STUDIO — CONTATO
+    ================================= */
+
+    .contact-page {
+      min-height: 100vh;
+      background: var(--bg, #080808);
+      color: var(--fg, #f1f0ec);
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .contact-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 5%;
+      border-bottom: 1px solid var(--line, #30302d);
+    }
+
+    .contact-logo {
+      color: inherit;
+      text-decoration: none;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .contact-logo span {
+      display: block;
+      margin-top: 3px;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-align: right;
+    }
+
+    .contact-back {
+      color: var(--fg, #f1f0ec);
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: .7;
+      transition: opacity .3s;
+    }
+
+    .contact-back:hover {
+      opacity: 1;
+    }
+
+    .contact-main {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 75px 0 100px;
+    }
+
+    .contact-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 55px;
+      color: var(--muted, #888782);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .contact-eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .contact-title {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 100px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.075em;
+      text-transform: uppercase;
+    }
+
+    .contact-title span {
+      color: transparent;
+      -webkit-text-stroke: 1px var(--fg, #f1f0ec);
+    }
+
+    .contact-intro {
+      max-width: 480px;
+      margin: 30px 0 80px;
+      color: var(--muted, #888782);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.9;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      padding-top: 35px;
+      border-top: 1px solid var(--line, #30302d);
+    }
+
+    .contact-label {
+      margin: 0 0 30px;
+      color: var(--muted, #888782);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .contact-channel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 23px 0;
+      border-bottom: 1px solid var(--line, #30302d);
+      color: var(--fg, #f1f0ec);
+      text-decoration: none;
+      transition: padding .3s, opacity .3s;
+    }
+
+    .contact-channel:hover {
+      padding-left: 8px;
+      opacity: .7;
+    }
+
+    .contact-channel strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .contact-channel small {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted, #888782);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+    }
+
+    .contact-arrow {
+      font-size: 20px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .contact-field {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-field label {
+      color: var(--muted, #888782);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .contact-field input,
+    .contact-field select,
+    .contact-field textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px 0;
+      border: none;
+      border-bottom: 1px solid var(--line, #30302d);
+      border-radius: 0;
+      outline: none;
+      background: transparent;
+      color: var(--fg, #f1f0ec);
+      font: 300 14px 'Manrope', sans-serif;
+    }
+
+    .contact-field select {
+      color-scheme: dark;
+    }
+
+    .contact-field select option {
+      background: #080808;
+      color: #f1f0ec;
+    }
+
+    .contact-field textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .contact-field input:focus,
+    .contact-field select:focus,
+    .contact-field textarea:focus {
+      border-bottom-color: var(--fg, #f1f0ec);
+    }
+
+    .contact-field input::placeholder,
+    .contact-field textarea::placeholder {
+      color: #666560;
+    }
+
+    .contact-submit {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-top: 10px;
+      padding: 19px 20px;
+      border: 1px solid var(--fg, #f1f0ec);
+      background: var(--fg, #f1f0ec);
+      color: var(--bg, #080808);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .3s, color .3s;
+    }
+
+    .contact-submit:hover {
+      background: transparent;
+      color: var(--fg, #f1f0ec);
+    }
+
+    .contact-note {
+      color: var(--muted, #888782);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .contact-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 25px 5%;
+      border-top: 1px solid var(--line, #30302d);
+      color: var(--muted, #888782);
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      .contact-header {
+        padding: 22px 5%;
+      }
+
+      .contact-main {
+        padding: 55px 0 70px;
+      }
+
+      .contact-eyebrow {
+        margin-bottom: 38px;
+      }
+
+      .contact-intro {
+        margin-bottom: 55px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+      }
+
+      .contact-footer {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .contact-page *,
+      .contact-page *::before,
+      .contact-page *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contact-page">
+
+    <header class="contact-header">
+      <a class="contact-logo" href="index.html">
+        MØRK
+        <span>STUDIO</span>
+      </a>
+
+      <a class="contact-back" href="index.html">
+        ← Voltar ao início
+      </a>
+    </header>
+
+    <main class="contact-main">
+
+      <div class="contact-eyebrow">
+        Projetos, ideias & colaborações
+      </div>
+
+      <h1 class="contact-title">
+        Vamos criar<br>
+        algo <span>único.</span>
+      </h1>
+
+      <p class="contact-intro">
+        Toda boa ideia começa com uma conversa.
+        Conte um pouco sobre o que você tem em mente.
+        Vamos transformar sua visão em algo real.
+      </p>
+
+      <section class="contact-grid">
+
+        <!-- CANAIS DE CONTATO -->
+
+        <div>
+          <h2 class="contact-label">
+            01 / Conecte-se
+          </h2>
+
+          <a
+            class="contact-channel"
+            href="https://wa.me/SEUNUMERO"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div>
+              <strong>WhatsApp</strong>
+              <small>Orçamentos & atendimento</small>
+            </div>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a
+            class="contact-channel"
+            href="https://instagram.com/SEUUSUARIO"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div>
+              <strong>Instagram</strong>
+              <small>Acompanhe o estúdio</small>
+            </div>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <p class="contact-note" style="margin-top: 30px;">
+            Tem uma ideia, uma referência ou um projeto
+            em desenvolvimento? Estamos abertos a novas
+            possibilidades.
+          </p>
+        </div>
+
+        <!-- FORMULÁRIO DE ORÇAMENTO -->
+
+        <div>
+          <h2 class="contact-label">
+            02 / Conte sua ideia
+          </h2>
+
+          <form class="contact-form" id="contactForm">
+
+            <div class="contact-field">
+              <label for="name">Seu nome</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Como podemos te chamar?"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+            <div class="contact-field">
+              <label for="email">Seu e-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="voce@email.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+            <div class="contact-field">
+              <label for="project">Tipo de projeto</label>
+              <select id="project" name="project" required>
+                <option value="" disabled selected>
+                  Selecione uma opção
+                </option>
+                <option value="Identidade visual">
+                  Identidade visual
+                </option>
+                <option value="Design gráfico">
+                  Design gráfico
+                </option>
+                <option value="Projeto digital">
+                  Projeto digital
+                </option>
+                <option value="Outro projeto">
+                  Outro projeto
+                </option>
+              </select>
+            </div>
+
+            <div class="contact-field">
+              <label for="message">Sua mensagem</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Fale um pouco sobre sua ideia..."
+                required
+              ></textarea>
+            </div>
+
+            <button class="contact-submit" type="submit">
+              <span>Enviar solicitação</span>
+              <span>↗</span>
+            </button>
+
+            <p class="contact-note">
+              Ao enviar, você poderá revisar sua mensagem
+              antes de encaminhá-la pelo WhatsApp.
+            </p>
+
+          </form>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="contact-footer">
+      <span>© MØRK Studio</span>
+      <span>Design com intenção.</span>
+      <span>04 / Contato</span>
+    </footer>
+
+  </div>
+
+  <script>
+    /*
+      SUBSTITUA PELO NÚMERO DO WHATSAPP DO ESTÚDIO.
+      Use DDI + DDD + número, somente dígitos.
+      Exemplo de formato: 5511999999999
+    */
+
+    const WHATSAPP_NUMBER = "SEUNUMERO";
+
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (
+          !WHATSAPP_NUMBER ||
+          !/^\d+$/.test(WHATSAPP_NUMBER)
+        ) {
+          alert(
+            "Configure o número do WhatsApp no arquivo contato.html antes de enviar."
+          );
+          return;
+        }
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const project = document.getElementById("project").value;
+        const message = document.getElementById("message").value.trim();
+
+        const text =
+          "Olá, MØRK Studio! Gostaria de solicitar um orçamento.\n\n" +
+          "Nome: " + name + "\n" +
+          "E-mail: " + email + "\n" +
+          "Projeto: " + project + "\n" +
+          "Mensagem: " + message;
+
+        const url =
+          "https://wa.me/" +
+          WHATSAPP_NUMBER +
+          "?text=" +
+          encodeURIComponent(text);
+
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+  </script>
+
+</body>
+</html>
