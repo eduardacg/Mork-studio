@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <title>Portfólio — MØRK Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .portfolio-heading {
+      padding: 100px 0 55px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 35px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .back-link:hover {
+      color: var(--fg);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 45px 18px;
+      padding-bottom: 100px;
+    }
+
+    .tattoo-card {
+      min-width: 0;
+    }
+
+    .tattoo-image {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: #111;
+      cursor: pointer;
+    }
+
+    .tattoo-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity .45s ease, transform .6s ease;
+    }
+
+    .tattoo-image .on-skin {
+      opacity: 0;
+    }
+
+    .tattoo-card:hover .on-skin,
+    .tattoo-card.show-skin .on-skin {
+      opacity: 1;
+    }
+
+    .tattoo-card:hover .design,
+    .tattoo-card.show-skin .design {
+      opacity: 0;
+    }
+
+    .tattoo-image:hover img {
+      transform: scale(1.025);
+    }
+
+    .tattoo-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+      padding-top: 14px;
+    }
+
+    .tattoo-label h2 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .tattoo-label span {
+      color: var(--muted);
+      font: 10px 'DM Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .portfolio-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 0 0 30px;
+    }
+
+    @media (max-width: 600px) {
+      .portfolio-heading {
+        padding-top: 65px;
+      }
+
+      .portfolio-grid {
+        gap: 30px 12px;
+      }
+
+      .tattoo-label {
+        display: block;
+      }
+
+      .tattoo-label span {
+        display: block;
+        margin-top: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="logo" href="index.html">MØRK <span>Studio</span></a>
+    <a class="back-link" href="index.html">← Início</a>
+  </header>
+
+  <main class="section">
+    <div class="portfolio-heading">
+      <p class="eyebrow">MØRK STUDIO — 001</p>
+      <h1>Portfólio<span>.</span></h1>
+      <p class="portfolio-note">
+        Desenhos, ideias e marcas na pele. Toque em uma imagem para alternar entre o desenho e a tatuagem.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <article class="tattoo-card">
+        <div class="tattoo-image" role="button" tabindex="0" aria-label="Alternar imagens do gato">
+          <img class="design" src="Cat.jpeg" alt="Desenho da tatuagem de gato">
+          <img class="on-skin" src="Cat%202.jpeg" alt="Tatuagem de gato na pele">
+        </div>
+        <div class="tattoo-label"><h2>Cat</h2><span>01 / Flash</span></div>
+      </article>
+
+      <article class="tattoo-card">
+        <div class="tattoo-image" role="button" tabindex="0" aria-label="Alternar imagens da serpente chinesa">
+          <img class="design" src="Chinese.jpeg" alt="Desenho da tatuagem chinesa">
+          <img class="on-skin" src="Chinese%202.jpeg" alt="Tatuagem chinesa na pele">
+        </div>
+        <div class="tattoo-label"><h2>Chinese</h2><span>02 / Flash</span></div>
+      </article>
+
+      <article class="tattoo-card">
+        <div class="tattoo-image" role="button" tabindex="0" aria-label="Alternar imagens do dragão">
+          <img class="design" src="Dragon.jpeg" alt="Desenho da tatuagem de dragão">
+          <img class="on-skin" src="Dragon%202.jpeg" alt="Tatuagem de dragão na pele">
+        </div>
+        <div class="tattoo-label"><h2>Dragon</h2><span>03 / Flash</span></div>
+      </article>
+
+      <article class="tattoo-card">
+        <div class="tattoo-image" role="button" tabindex="0" aria-label="Alternar imagens de Over the Garden Wall">
+          <img class="design" src="Over%20the%20Garden%20Wall.jpeg" alt="Desenho inspirado em Over the Garden Wall">
+          <img class="on-skin" src="Over%20the%20Garden%20Wall%202.jpeg" alt="Tatuagem inspirada em Over the Garden Wall na pele">
+        </div>
+        <div class="tattoo-label"><h2>Over the Garden Wall</h2><span>04 / Flash</span></div>
+      </article>
+
+      <article class="tattoo-card">
+        <div class="tattoo-image" role="button" tabindex="0" aria-label="Alternar imagens de Poseidon">
+          <img class="design" src="Poseidon.jpeg" alt="Desenho da tatuagem de Poseidon">
+          <img class="on-skin" src="Poseidon%202.jpeg" alt="Tatuagem de Poseidon na pele">
+        </div>
+        <div class="tattoo-label"><h2>Poseidon</h2><span>05 / Flash</span></div>
+      </article>
+
+      <article class="tattoo-card">
+        <div class="tattoo-image" role="button" tabindex="0" aria-label="Alternar imagens da lula">
+          <img class="design" src="Squid.jpeg" alt="Desenho da tatuagem de lula">
+          <img class="on-skin" src="Squid%202.jpeg" alt="Tatuagem de lula na pele">
+        </div>
+        <div class="tattoo-label"><h2>Squid</h2><span>06 / Flash</span></div>
+      </article>
+
+      <article class="tattoo-card">
+        <div class="tattoo-image" role="button" tabindex="0" aria-label="Alternar imagens da bruxa">
+          <img class="design" src="Witch.jpeg" alt="Desenho da tatuagem de bruxa">
+          <img class="on-skin" src="Witch%202.jpeg" alt="Tatuagem de bruxa na pele">
+        </div>
+        <div class="tattoo-label"><h2>Witch</h2><span>07 / Flash</span></div>
+      </article>
+
+      <article class="tattoo-card">
+        <div class="tattoo-image" role="button" tabindex="0" aria-label="Alternar imagens de Zeus">
+          <img class="design" src="Zeus.jpeg" alt="Desenho da tatuagem de Zeus">
+          <img class="on-skin" src="Zeus%202.jpeg" alt="Tatuagem de Zeus na pele">
+        </div>
+        <div class="tattoo-label"><h2>Zeus</h2><span>08 / Flash</span></div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>MØRK Studio © 2026</p>
+    <a href="index.html">Voltar ao início ↑</a>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.tattoo-image').forEach((image) => {
+      const toggle = () => image.closest('.tattoo-card').classList.toggle('show-skin');
+
+      image.addEventListener('click', toggle);
+      image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggle();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
