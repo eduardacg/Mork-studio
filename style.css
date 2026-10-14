@@ -666,3 +666,13 @@ button {
 .hero-cta .cta-primary span {
   font-family: 'DM Mono', monospace;
 }
+/* MICROCOPY DE CONFIANÇA */
+
+.hero-trust {
+  margin-top: 12px;
+  color: #a5a49e;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
