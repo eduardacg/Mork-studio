@@ -913,3 +913,45 @@ button {
     pointer-events: none;
   }
 }
+
+/* MØRK — ENTRADA CINEMATOGRÁFICA */
+#preloader .preloader-content {
+  animation: morkIntro 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+#preloader .preloader-wordmark {
+  animation: morkLogo 1.3s ease both;
+}
+
+#preloader .preloader-label {
+  animation: morkLabel 1s ease 0.25s both;
+}
+
+@keyframes morkIntro {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes morkLogo {
+  from {
+    opacity: 0;
+    letter-spacing: 0.04em;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: -0.09em;
+    filter: blur(0);
+  }
+}
+
+@keyframes morkLabel {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
