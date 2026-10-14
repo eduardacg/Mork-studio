@@ -160,7 +160,7 @@ function hideModal() {
   document.body.classList.remove("modal-open");
 }
 
-filters.addEventListener("click", event => {
+if (filters) filters.addEventListener("click", event => {
   const button = event.target.closest("button[data-filter]");
   if (!button) return;
 
@@ -171,9 +171,9 @@ filters.addEventListener("click", event => {
   renderProjects(button.dataset.filter);
 });
 
-closeModal.addEventListener("click", hideModal);
+if (closeModal) closeModal.addEventListener("click", hideModal);
 
-modal.addEventListener("click", event => {
+if (modal) modal.addEventListener("click", event => {
   if (event.target === modal) hideModal();
 });
 
@@ -181,50 +181,4 @@ document.addEventListener("keydown", event => {
   if (event.key === "Escape") hideModal();
 });
 
-renderProjects();
-
-/* =================================
-   MØRK STUDIO — CONTROLE DO PRELOADER
-================================= */
-
-(function () {
-  const preloader = document.getElementById('preloader');
-  console.log('MØRK: JS executado', preloader);
-
-setTimeout(() => {
-  if (preloader) {
-    preloader.classList.add('preloader-hidden');
-    console.log('MØRK: ocultando carregamento');
-  }
-}, 3000);
-
-  if (!preloader) return;
-
-  let hidden = false;
-
-  function hidePreloader() {
-    if (hidden) return;
-    hidden = true;
-
-    preloader.classList.add('preloader-hidden');
-
-    setTimeout(function () {
-      preloader.remove();
-    }, 800);
-  }
-
-  function startPreloader() {
-    setTimeout(hidePreloader, 700);
-  }
-
-  if (document.readyState === 'complete') {
-    startPreloader();
-  } else {
-    window.addEventListener('load', startPreloader, {
-      once: true
-    });
-  }
-
-  // Evita que a tela fique presa se algum recurso demorar.
-  setTimeout(hidePreloader, 8000);
-})();
+if (gallery && counter) renderProjects();
