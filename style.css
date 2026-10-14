@@ -826,9 +826,7 @@ button {
   background: #080808;
   opacity: 1;
   visibility: visible;
-  transition:
-    opacity 0.7s ease,
-    visibility 0.7s ease;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
 }
 
 #preloader.preloader-hidden {
@@ -841,29 +839,30 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 28px;
-  padding: 24px;
+  gap: 25px;
 }
 
-.preloader-logo {
-  display: block;
-  width: min(72vw, 340px);
-  max-height: 180px;
-  object-fit: contain;
-  animation: logo-appear 1s ease both;
+.preloader-wordmark {
+  color: #f1f0ec;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(48px, 12vw, 90px);
+  font-weight: 800;
+  letter-spacing: -0.09em;
+  line-height: 1;
+}
+
+.preloader-wordmark span {
+  font-weight: 300;
 }
 
 .preloader-dots {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
+  gap: 8px;
 }
 
 .preloader-dots span {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: #f1f0ec;
   animation: dot-pulse 1s ease-in-out infinite;
@@ -878,12 +877,11 @@ button {
 }
 
 .preloader-label {
-  margin: -14px 0 0;
+  margin-top: -12px;
   color: #888782;
   font-family: 'DM Mono', monospace;
   font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.25em;
 }
 
 @keyframes dot-pulse {
@@ -898,20 +896,7 @@ button {
   }
 }
 
-@keyframes logo-appear {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .preloader-logo,
   .preloader-dots span {
     animation: none;
   }
