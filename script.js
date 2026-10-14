@@ -150,33 +150,27 @@ renderProjects();
 
 /* MØRK STUDIO — CONTROLE DO PRELOADER */
 
+
 (function () {
   const preloader = document.getElementById('preloader');
-
   if (!preloader) return;
 
-  let finished = false;
-
   function hidePreloader() {
-    if (finished) return;
-    finished = true;
-
     preloader.classList.add('preloader-hidden');
 
     setTimeout(function () {
-      preloader.remove();
+      if (preloader.parentNode) {
+        preloader.remove();
+      }
     }, 800);
   }
 
-  // Revela o site quando os recursos terminarem de carregar.
+  // Segurança: remove a tela mesmo se o carregamento falhar.
+  setTimeout(hidePreloader, 2500);
+
   if (document.readyState === 'complete') {
     hidePreloader();
   } else {
-    window.addEventListener('load', hidePreloader, {
-      once: true
-    });
+    window.addEventListener('load', hidePreloader, { once: true });
   }
-
-  // Evita que a tela fique presa caso algum recurso demore.
-  setTimeout(hidePreloader, 5000);
 })();
