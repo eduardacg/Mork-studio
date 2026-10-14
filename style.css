@@ -762,3 +762,25 @@ button {
   font-weight: 400;
   letter-spacing: .12em;
 }
+/* CORREÇÃO DO LAYOUT DO HERO*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items:  flex-start;
+}
+
+.hero-subtitle {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+}
+.hero-cta {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.hero-trust {
+  display: block;
+  width: 100%;
+}
