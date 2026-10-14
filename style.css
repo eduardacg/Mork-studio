@@ -430,6 +430,7 @@ button {
     flex-direction: column;
     gap: 5px;
   }
+  
 
   .project-info .project-meta {
     text-align: left;
@@ -674,5 +675,26 @@ button {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+/* MICROCOPY — NOTA DISCRETA DO CTA */
+
+.hero-trust {
+  margin-top: 7px;
+  margin-bottom: 24px;
+  color: #888782;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+}
+/* BOTÕES — TIPOGRAFIA MONOESPAÇADA */
+
+.hero-cta a,
+.hero-cta .cta-primary span {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 400;
   letter-spacing: 0.04em;
 }
