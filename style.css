@@ -641,3 +641,28 @@ button {
     min-height: 50px;
   }
 }
+/* CONTRASTE DO SUBTÍTULO */
+
+.hero-subtitle {
+  color: #c4c3be;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.subtitle-highlight {
+  color: #f1f0ec;
+  display: inline;
+}
+
+/* TIPOGRAFIA DOS BOTÕES */
+
+.hero-cta a {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+
+.hero-cta .cta-primary span {
+  font-family: 'DM Mono', monospace;
+}
