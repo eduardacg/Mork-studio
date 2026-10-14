@@ -749,3 +749,16 @@ button {
     justify-content: center;
   }
 }
+/* CARD PIERCING */
+
+.piercing-art {
+  background:
+    radial-gradient(ellipse at center, #242424 0%, #111 48%, #080808 100%);
+}
+
+.piercing-art .category-symbol {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(22px, 4vw, 42px);
+  font-weight: 400;
+  letter-spacing: .12em;
+}
