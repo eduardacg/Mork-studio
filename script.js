@@ -146,3 +146,37 @@ document.addEventListener("keydown", event => {
 });
 
 renderProjects();
+
+
+/* MØRK STUDIO — CONTROLE DO PRELOADER */
+
+(function () {
+  const preloader = document.getElementById('preloader');
+
+  if (!preloader) return;
+
+  let finished = false;
+
+  function hidePreloader() {
+    if (finished) return;
+    finished = true;
+
+    preloader.classList.add('preloader-hidden');
+
+    setTimeout(function () {
+      preloader.remove();
+    }, 800);
+  }
+
+  // Revela o site quando os recursos terminarem de carregar.
+  if (document.readyState === 'complete') {
+    hidePreloader();
+  } else {
+    window.addEventListener('load', hidePreloader, {
+      once: true
+    });
+  }
+
+  // Evita que a tela fique presa caso algum recurso demore.
+  setTimeout(hidePreloader, 5000);
+})();
