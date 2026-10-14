@@ -147,30 +147,40 @@ document.addEventListener("keydown", event => {
 
 renderProjects();
 
-
-/* MØRK STUDIO — CONTROLE DO PRELOADER */
-
+/* =================================
+   MØRK STUDIO — CONTROLE DO PRELOADER
+================================= */
 
 (function () {
   const preloader = document.getElementById('preloader');
+
   if (!preloader) return;
 
+  let hidden = false;
+
   function hidePreloader() {
+    if (hidden) return;
+    hidden = true;
+
     preloader.classList.add('preloader-hidden');
 
     setTimeout(function () {
-      if (preloader.parentNode) {
-        preloader.remove();
-      }
+      preloader.remove();
     }, 800);
   }
 
-  // Segurança: remove a tela mesmo se o carregamento falhar.
-  setTimeout(hidePreloader, 2500);
+  function startPreloader() {
+    setTimeout(hidePreloader, 700);
+  }
 
   if (document.readyState === 'complete') {
-    hidePreloader();
+    startPreloader();
   } else {
-    window.addEventListener('load', hidePreloader, { once: true });
+    window.addEventListener('load', startPreloader, {
+      once: true
+    });
   }
+
+  // Evita que a tela fique presa se algum recurso demorar.
+  setTimeout(hidePreloader, 8000);
 })();
