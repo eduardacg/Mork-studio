@@ -16,18 +16,29 @@
   <div class="preloader-content">
     <div class="preloader-wordmark">MØRK</div>
 
+
 <script>
+(function () {
   setTimeout(function () {
     var loader = document.getElementById("preloader");
-    if (loader) {
-      loader.style.display = "none";
-    }
-
     var oldLoader = document.getElementById("mork-loader");
-    if (oldLoader) {
-      oldLoader.style.display = "none";
-    }
+
+    [loader, oldLoader].forEach(function (tela) {
+      if (!tela) return;
+
+      tela.style.transition =
+        "opacity 1.2s cubic-bezier(0.76, 0, 0.24, 1), visibility 1.2s ease";
+
+      tela.style.opacity = "0";
+      tela.style.visibility = "hidden";
+      tela.style.pointerEvents = "none";
+
+      setTimeout(function () {
+        tela.style.display = "none";
+      }, 1250);
+    });
   }, 3000);
+})();
 </script>
 
     <div class="preloader-dots">
