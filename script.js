@@ -153,6 +153,14 @@ renderProjects();
 
 (function () {
   const preloader = document.getElementById('preloader');
+  console.log('MØRK: JS executado', preloader);
+
+setTimeout(() => {
+  if (preloader) {
+    preloader.classList.add('preloader-hidden');
+    console.log('MØRK: ocultando carregamento');
+  }
+}, 3000);
 
   if (!preloader) return;
 
