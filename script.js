@@ -1,29 +1,27 @@
 
 /* MØRK STUDIO — PRELOADER */
 (function () {
-  const preloader = document.getElementById("preloader");
-  if (!preloader) return;
+  function iniciarPreloader() {
+    const preloader = document.getElementById("preloader");
 
-  function hidePreloader() {
-    preloader.classList.add("preloader-hidden");
+    if (!preloader) return;
 
     setTimeout(function () {
-      if (preloader.parentNode) {
+      preloader.classList.add("preloader-hidden");
+
+      setTimeout(function () {
         preloader.remove();
-      }
-    }, 800);
+      }, 800);
+    }, 1500);
   }
 
-  if (document.readyState === "complete") {
-    setTimeout(hidePreloader, 700);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciarPreloader, {
+      once: true
+    });
   } else {
-    window.addEventListener("load", function () {
-      setTimeout(hidePreloader, 700);
-    }, { once: true });
+    iniciarPreloader();
   }
-
-  /* Segurança: não deixa a tela ficar presa */
-  setTimeout(hidePreloader, 5000);
 })();
 
 /*
