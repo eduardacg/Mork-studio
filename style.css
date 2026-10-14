@@ -698,3 +698,54 @@ button {
   font-weight: 400;
   letter-spacing: 0.04em;
 }
+/* CHAMADA PARA AGENDAMENTO — PORTFÓLIO */
+
+.portfolio-cta {
+  padding: 65px 0 80px;
+  border-top: 1px solid #30302d;
+  margin-top: 10px;
+}
+
+.portfolio-cta h2 {
+  margin: 16px 0 10px;
+  color: #f1f0ec;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.portfolio-cta > p:not(.eyebrow) {
+  color: #a5a49e;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.portfolio-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  padding: 15px 20px;
+  background: #f1f0ec;
+  border: 1px solid #f1f0ec;
+  color: #080808;
+  font: 12px 'DM Mono', monospace;
+  text-decoration: none;
+  transition: background .25s ease;
+}
+
+.portfolio-cta-button:hover {
+  background: #d4d3ce;
+}
+
+@media (max-width: 600px) {
+  .portfolio-cta {
+    padding: 48px 0 60px;
+  }
+
+  .portfolio-cta-button {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
