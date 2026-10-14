@@ -573,3 +573,71 @@ button {
     letter-spacing: 0.08em;
   }
 }
+/* CTA PRINCIPAL — MØRK STUDIO */
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 22px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .25s ease,
+              color .25s ease,
+              border-color .25s ease;
+}
+
+.cta-primary {
+  background: #f1f0ec;
+  color: #080808;
+  border: 1px solid #f1f0ec;
+}
+
+.cta-primary:hover {
+  background: #d4d3ce;
+  border-color: #d4d3ce;
+}
+
+.cta-secondary {
+  background: transparent;
+  color: #f1f0ec;
+  border: 1px solid #454541;
+}
+
+.cta-secondary:hover {
+  border-color: #f1f0ec;
+}
+
+.hero-cta .cta-primary span {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .hero-cta a {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 50px;
+  }
+}
