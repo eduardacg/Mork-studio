@@ -22,6 +22,24 @@
       <span></span>
     </div>
 
+<script>
+(function () {
+  var tela = document.getElementById("preloader");
+
+  if (!tela) return;
+
+  setTimeout(function () {
+    tela.style.opacity = "0";
+    tela.style.visibility = "hidden";
+    tela.style.pointerEvents = "none";
+
+    setTimeout(function () {
+      tela.remove();
+    }, 800);
+  }, 2000);
+})();
+</script>
+    
     <p class="preloader-label">CARREGANDO</p>
   </div>
 </div>
