@@ -16,6 +16,20 @@
   <div class="preloader-content">
     <div class="preloader-wordmark">MØRK</div>
 
+<script>
+  setTimeout(function () {
+    var loader = document.getElementById("preloader");
+    if (loader) {
+      loader.style.display = "none";
+    }
+
+    var oldLoader = document.getElementById("mork-loader");
+    if (oldLoader) {
+      oldLoader.style.display = "none";
+    }
+  }, 3000);
+</script>
+
     <div class="preloader-dots">
       <span></span>
       <span></span>
