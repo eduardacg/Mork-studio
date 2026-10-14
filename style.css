@@ -811,3 +811,112 @@ button {
     max-width: 320px;
   }
 }
+
+/* =================================
+   MØRK STUDIO — PRELOADER
+================================= */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #080808;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.7s ease,
+    visibility 0.7s ease;
+}
+
+#preloader.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 24px;
+}
+
+.preloader-logo {
+  display: block;
+  width: min(72vw, 340px);
+  max-height: 180px;
+  object-fit: contain;
+  animation: logo-appear 1s ease both;
+}
+
+.preloader-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.preloader-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f1f0ec;
+  animation: dot-pulse 1s ease-in-out infinite;
+}
+
+.preloader-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.preloader-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.preloader-label {
+  margin: -14px 0 0;
+  color: #888782;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+}
+
+@keyframes dot-pulse {
+  0%, 60%, 100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes logo-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader-logo,
+  .preloader-dots span {
+    animation: none;
+  }
+
+  #preloader {
+    transition: none;
+  }
+}
