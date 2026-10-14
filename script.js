@@ -1,3 +1,39 @@
+
+/* MØRK STUDIO — PRELOADER */
+(function () {
+  const preloader = document.getElementById("preloader");
+  if (!preloader) return;
+
+  let hidden = false;
+
+  function hidePreloader() {
+    if (hidden) return;
+    hidden = true;
+
+    preloader.classList.add("preloader-hidden");
+
+    setTimeout(function () {
+      preloader.remove();
+    }, 800);
+  }
+
+  function startPreloader() {
+    setTimeout(hidePreloader, 1500);
+  }
+
+  if (document.readyState === "complete") {
+    startPreloader();
+  } else {
+    window.addEventListener("load", startPreloader, {
+      once: true
+    });
+  }
+
+  // Segurança: nunca deixar a tela presa.
+  setTimeout(hidePreloader, 8000);
+})();
+
+
 /*
   MØRK STUDIO
   PARA EDITAR OS PROJETOS:
