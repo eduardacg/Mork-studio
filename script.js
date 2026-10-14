@@ -4,35 +4,27 @@
   const preloader = document.getElementById("preloader");
   if (!preloader) return;
 
-  let hidden = false;
-
   function hidePreloader() {
-    if (hidden) return;
-    hidden = true;
-
     preloader.classList.add("preloader-hidden");
 
     setTimeout(function () {
-      preloader.remove();
+      if (preloader.parentNode) {
+        preloader.remove();
+      }
     }, 800);
   }
 
-  function startPreloader() {
-    setTimeout(hidePreloader, 1500);
-  }
-
   if (document.readyState === "complete") {
-    startPreloader();
+    setTimeout(hidePreloader, 700);
   } else {
-    window.addEventListener("load", startPreloader, {
-      once: true
-    });
+    window.addEventListener("load", function () {
+      setTimeout(hidePreloader, 700);
+    }, { once: true });
   }
 
-  // Segurança: nunca deixar a tela presa.
-  setTimeout(hidePreloader, 8000);
+  /* Segurança: não deixa a tela ficar presa */
+  setTimeout(hidePreloader, 5000);
 })();
-
 
 /*
   MØRK STUDIO
