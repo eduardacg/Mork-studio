@@ -851,10 +851,6 @@ button {
   line-height: 1;
 }
 
-.preloader-wordmark span {
-  font-weight: 300;
-}
-
 .preloader-dots {
   display: flex;
   gap: 8px;
@@ -865,7 +861,7 @@ button {
   height: 5px;
   border-radius: 50%;
   background: #f1f0ec;
-  animation: dot-pulse 1s ease-in-out infinite;
+  animation: mork-dot-pulse 1s ease-in-out infinite;
 }
 
 .preloader-dots span:nth-child(2) {
@@ -884,7 +880,7 @@ button {
   letter-spacing: 0.25em;
 }
 
-@keyframes dot-pulse {
+@keyframes mork-dot-pulse {
   0%, 60%, 100% {
     opacity: 0.25;
     transform: translateY(0);
