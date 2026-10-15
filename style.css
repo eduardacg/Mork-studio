@@ -1059,21 +1059,88 @@ button {
 }
 
 @media (max-width: 480px) {
+}
+  
+/* MØRK STUDIO — CORREÇÃO DO RODAPÉ */
+
+.mork-footer {
+  display: block !important;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px 7% 22px;
+  background: #080808 !important;
+  color: #999999 !important;
+  border-top: 1px solid #292929;
+  font-family: inherit;
+}
+
+.mork-footer .footer-top,
+.mork-footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.mork-footer .footer-logo {
+  color: #f2f0e9 !important;
+  font-size: 23px;
+  letter-spacing: 2px;
+}
+
+.mork-footer .footer-logo span {
+  font-size: 17px;
+}
+
+.mork-footer .footer-category,
+.mork-footer .footer-label {
+  color: #777777 !important;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.mork-footer .footer-location {
+  padding: 28px 0;
+}
+
+.mork-footer .footer-city {
+  color: #b0b0b0 !important;
+  font-size: 14px;
+  margin: 14px 0 7px;
+}
+
+.mork-footer .footer-address {
+  color: #858585 !important;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.mork-footer .footer-map {
+  display: inline-flex;
+  gap: 10px;
+  color: #aaaaaa !important;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid #555555;
+  padding-bottom: 6px;
+}
+
+.mork-footer .footer-bottom {
+  border-top: 1px solid #292929;
+  padding-top: 18px;
+  color: #666666 !important;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 480px) {
   .mork-footer {
-    padding: 35px 6% 20px;
+    padding: 32px 6% 20px;
   }
 
-  .footer-logo {
-    font-size: 20px;
-  }
-
-  .footer-category {
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
-
-  .footer-bottom {
-    font-size: 8px;
+  .mork-footer .footer-top,
+  .mork-footer .footer-bottom {
     flex-wrap: wrap;
   }
 }
