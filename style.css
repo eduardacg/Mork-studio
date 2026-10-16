@@ -969,10 +969,6 @@ button {
   width: 100%;
 }
 
-.mork-footer * {
-  box-sizing: border-box;
-}
-
 .footer-top {
   display: flex;
   justify-content: space-between;
